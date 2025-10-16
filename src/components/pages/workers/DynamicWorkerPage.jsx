@@ -88,7 +88,7 @@ const DynamicWorkerPage = () => {
               </button>
               <EditWorkerModal worker={worker} setWorker={setWorker} />
               <PDFDownloadLink document={<WorkerSummaryPDF workerData={worker} />}>
-              <button className="inline-flex items-center px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium transition-colors">
+              <button className="mt-1 md:mt-0 inline-flex items-center px-3 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md text-sm font-medium transition-colors">
                 <Download className="h-4 w-4 mr-2" />
                 Download
               </button>

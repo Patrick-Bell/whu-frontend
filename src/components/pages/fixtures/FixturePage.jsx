@@ -54,6 +54,7 @@ const FixturePage = () => {
         .sort((a, b) => new Date(a.date) - new Date(b.date))
       
       if (upcoming.length > 0) {
+        console.log(upcoming[0], 'next fixture')
         setNextFixture(upcoming[0])
       }
 
@@ -161,9 +162,12 @@ const FixturePage = () => {
             <div className="grid grid-cols-3 lg:grid-cols-4 items-center gap-4">
               {/* Home Team */}
               <div id="home-team" className="flex justify-end items-center gap-3">
-                <p className="text-right font-bold text-gray-900">{nextFixture.home_team}</p>
-                <img
-                  className="w-10 h-10"
+              <p className="text-right font-bold text-gray-900">
+                <span className="sm:hidden">{nextFixture.home_team_abb}</span>
+                <span className="hidden sm:inline">{nextFixture.home_team}</span>
+              </p>                
+              <img
+                  className="w-8 h-8"
                   src={retrieveImg(nextFixture.home_team)}
                   alt={nextFixture.home_team}
                 />
@@ -184,11 +188,14 @@ const FixturePage = () => {
               {/* Away Team */}
               <div id="away-team" className="flex justify-start items-center gap-3">
                 <img
-                  className="w-10 h-10"
+                  className="w-8 h-8"
                   src={retrieveImg(nextFixture.away_team)}
                   alt={nextFixture.away_team}
                 />
-                <p className="text-left font-bold text-gray-900">{nextFixture.away_team}</p>
+              <p className="text-right font-bold text-gray-900">
+                <span className="sm:hidden">{nextFixture.away_team_abb}</span>
+                <span className="hidden sm:inline">{nextFixture.away_team}</span>
+              </p>               
               </div>
 
               {/* Action Button */}
@@ -233,8 +240,11 @@ const FixturePage = () => {
                 >
                   {/* Home Team */}
                   <div className="flex justify-end items-center gap-3">
-                    <p className="text-right font-semibold">{fixture.home_team}</p>
-                    <img
+                  <p className="text-right font-bold text-gray-900">
+                <span className="sm:hidden">{fixture.home_team_abb}</span>
+                <span className="hidden sm:inline">{fixture.home_team}</span>
+                  </p>                      
+                  <img
                       className="w-8 h-8"
                       src={retrieveImg(fixture.home_team)}
                       alt={fixture.home_team}
@@ -254,8 +264,11 @@ const FixturePage = () => {
                       src={retrieveImg(fixture.away_team)}
                       alt={fixture.away_team}
                     />
-                    <p className="text-left font-semibold">{fixture.away_team}</p>
-                  </div>
+                <p className="text-right font-bold text-gray-900">
+                <span className="sm:hidden">{fixture.away_team_abb}</span>
+                <span className="hidden sm:inline">{fixture.away_team}</span>
+              </p>                    
+              </div>
 
                   {/* Action Button */}
                   {games?.some(f => f.name.toLowerCase() === fixture?.name.toLowerCase()) ? (

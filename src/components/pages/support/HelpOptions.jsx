@@ -12,7 +12,7 @@ const HelpOptions = () => {
         {
           icon: Mail,
           title: "Email Support",
-          description: "patrickbell1302@gmail.com",
+          description: "24/7 email support",
           color: "bg-yellow-50 text-yellow-600",
         },
         {
